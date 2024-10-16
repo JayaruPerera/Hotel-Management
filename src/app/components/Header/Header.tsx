@@ -15,7 +15,7 @@ const Header = () => {
     return (
         <header className="py-10 px-4 container mx-auto text-xl flex flex-wrap md:flex-nowrap items-center justify-between">      {/* Header container with padding and responsive layout settings */}
             <div className="flex items-center w-full md:2/3">                                                             {/* Main navigation area with flexbox for layout control on medium and larger screens */}
-                <Link href="/" className="font-black text-[#F27405]">                                                        {/* Link to the homepage with bold and orange-styled text */}  
+                <Link href="/" className="font-black text-tertiary-dark">                                                        {/* Link to the homepage with bold and orange-styled text */}  
                 Jayaru Guest House
                 </Link>
                 <ul className="flex items-center ml-5">                                                                       {/* List containing icons for user authentication and dark mode */}  

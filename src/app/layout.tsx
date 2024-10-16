@@ -8,6 +8,7 @@
 import type { Metadata } from "next";                                     // 'Metadata' is a type used for defining metadata for the Next.js page.
 import { Open_Sans } from "next/font/google";                             // Importing 'Open_Sans' font from Google Fonts via Next.js Font API.
 import Header from "./components/Header/Header";                          // Importing the 'Header' component for the layout and global CSS styles.
+import Footer from "./components/Footer/Footer";                          // Importing the 'Header' component for the layout and global CSS styles.
 import "./globals.css";
 
 //Setting up the 'Open Sans' font with different subsets, weights, and styles.
@@ -36,7 +37,7 @@ export default function RootLayout({                                      //This
         <main className="font-normal">
           <Header />
           {children}
-          {/* ?Footer */}
+          <Footer />
         </main>
       </body>
     </html>
