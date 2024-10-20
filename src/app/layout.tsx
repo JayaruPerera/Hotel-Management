@@ -10,6 +10,7 @@ import { Open_Sans } from "next/font/google";                             // Imp
 import Header from "./components/Header/Header";                          // Importing the 'Header' component for the layout and global CSS styles.
 import Footer from "./components/Footer/Footer";                          // Importing the 'Header' component for the layout and global CSS styles.
 import "./globals.css";
+import ThemeProvider from "./components/ThemeProvider/ThemeProvider";
 
 //Setting up the 'Open Sans' font with different subsets, weights, and styles.
 const open_sans = Open_Sans({ 
@@ -34,11 +35,13 @@ export default function RootLayout({                                      //This
   return (
     <html lang="en">
       <body className={open_sans.className}>
+        <ThemeProvider>
         <main className="font-normal">
           <Header />
           {children}
           <Footer />
         </main>
+        </ThemeProvider>
       </body>
     </html>
   );
