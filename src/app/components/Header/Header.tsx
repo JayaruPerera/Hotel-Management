@@ -36,13 +36,13 @@ const Header = () => {
                         {darkTheme ? (
                         <MdOutlineLightMode 
                         className="cursor-pointer"
-                        onClick={() =>
+                        onClick={() => {
                             setDarkTheme(false);
-                            localStorage.removeItem('hotel-theme')
+                            localStorage.removeItem('hotel-theme');
                         }}
                         />
                         ) : (
-                        <MdDarkMode className='cursor-pointer'onClick={() =>
+                        <MdDarkMode className='cursor-pointer'onClick={() =>{
                             setDarkTheme(true);
                             localStorage.setItem('hotel-theme',"true");
                         }}/>      
