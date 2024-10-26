@@ -33,19 +33,30 @@ const Header = () => {
                         </Link>
                     </li>
                     <li className='ml-2'>
-                        {darkTheme ? (
+                        {darkTheme ? (                    // This checks the current value of `darkTheme`.  // If `darkTheme` is `true`, meaning dark mode is active, the light mode icon (`MdOutlineLightMode`) is displayed.
                         <MdOutlineLightMode 
-                        className="cursor-pointer"
+                        className="cursor-pointer"        // This icon has the class `cursor-pointer`, so the cursor changes to a pointer when hovering over the icon,
                         onClick={() => {
                             setDarkTheme(false);
                             localStorage.removeItem('hotel-theme');
                         }}
                         />
+                        // This `onClick` function runs when the user clicks the light mode icon.
+                        // It calls `setDarkTheme(false)` to switch the theme to light mode.
+                        // `localStorage.removeItem('hotel-theme')` removes the theme setting from `localStorage`, 
+                        // so the theme will revert to the default if the page is refreshed.    
+
+
                         ) : (
+                            // If `darkTheme` is `false`, meaning light mode is active, the dark mode icon (`MdDarkMode`) is displayed.
                         <MdDarkMode className='cursor-pointer'onClick={() =>{
                             setDarkTheme(true);
                             localStorage.setItem('hotel-theme',"true");
                         }}/>      
+                        // This `onClick` function runs when the user clicks the dark mode icon.
+                        // It calls `setDarkTheme(true)` to switch the theme to dark mode.
+                        // `localStorage.setItem('hotel-theme', "true")` saves the setting in `localStorage`, 
+                        // so dark mode remains active even after refreshing the page.
                         )}                                                         {/* Dark mode toggle icon */}
                     </li>
                     </ul>   
@@ -56,10 +67,10 @@ const Header = () => {
                     <li className="hover:-translate-y-2 duration-500 transition-all">                                          {/* Link to the homepage with hover effect for smooth transition */}
                     <Link href='/'>Home</Link>
                     </li>
-                    <li className="hover:-translate-y-2 duration-500 transition-all">
+                    <li className="hover:-translate-y-2 duration-500 transition-all pl-2">
                     <Link href='/rooms'>Rooms</Link>
                     </li>
-                    <li className="hover:-translate-y-2 duration-500 transition-all">
+                    <li className="hover:-translate-y-2 duration-500 transition-all pl-2">
                     <Link href='/contact'>Contact</Link>
                     </li>
 

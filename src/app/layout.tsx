@@ -1,3 +1,5 @@
+
+
 /**
  * This file defines the root layout for the Next.js application. It includes global styles, 
  * sets metadata for the app, and imports essential components like the Header. 
@@ -11,6 +13,8 @@ import Header from "./components/Header/Header";                          // Imp
 import Footer from "./components/Footer/Footer";                          // Importing the 'Header' component for the layout and global CSS styles.
 import "./globals.css";
 import ThemeProvider from "./components/ThemeProvider/ThemeProvider";
+import { SessionProvider } from 'next-auth/react';
+import Wrapper from "./wrapper"
 
 //Setting up the 'Open Sans' font with different subsets, weights, and styles.
 const open_sans = Open_Sans({ 
@@ -38,7 +42,10 @@ export default function RootLayout({                                      //This
         <ThemeProvider>
         <main className="font-normal">
           <Header />
+          <Wrapper>
+
           {children}
+          </Wrapper>
           <Footer />
         </main>
         </ThemeProvider>
